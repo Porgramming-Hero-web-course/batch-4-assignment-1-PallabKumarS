@@ -1,10 +1,10 @@
 {
   const countWordOccurrences = (sentence: string, word: string): number => {
-    let count = 0;
+    let count:number = 0;
     const words: string[] = sentence.toLowerCase().split(" ");
 
     words.forEach((element) => {
-      if (element === word) {
+      if (element === word.toLowerCase()) {
         count++;
       }
     });
@@ -12,5 +12,5 @@
     return count;
   };
 
-  console.log(countWordOccurrences("I love typescript", "typescript"));
+  console.log(countWordOccurrences("I love typescript", "Typescript"));
 }

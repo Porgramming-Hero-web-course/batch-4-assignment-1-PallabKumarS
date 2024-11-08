@@ -1,16 +1,16 @@
 {
-  type circle = {
+  type Circle = {
     shape: "circle";
     radius: number;
   };
 
-  type rectangle = {
+  type Rectangle = {
     shape: "rectangle";
     height: number;
     width: number;
   };
 
-  type shape = circle | rectangle;
+  type shape = Circle | Rectangle;
 
   const calculateShapeArea = (object: shape): number => {
     let area: number = 0;
@@ -19,7 +19,7 @@
     } else {
       area = object.height * object.width;
     }
-    return parseFloat(area.toPrecision(4));
+    return parseFloat(area.toFixed(2));
   };
 
   const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });

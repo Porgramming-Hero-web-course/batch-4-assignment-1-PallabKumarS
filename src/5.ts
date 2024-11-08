@@ -1,8 +1,6 @@
 {
-  function getProperty<X extends object, Y extends keyof X>(obj: X, key: Y) {
-    if (String(key) in obj) {
-      return obj[key];
-    }
+  function getProperty<X, Y extends keyof X>(obj: X, key: Y): X[Y] {
+    return obj[key];
   }
 
   const person = { name: "Alice", age: 30 };
